@@ -1,0 +1,1 @@
+// when a function uses parameter is when a function needs data to perform its tasks.
