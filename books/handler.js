@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const promiseFs = fs.promises;
 
 
@@ -49,7 +50,7 @@ exports.addNewBook = (req, res) => {
 
 exports.getAllBooks = async (req, res) => {
   try {
-    const books = await promiseFs.readFile("./books.json");
+    const books = await promiseFs.readFile(path.join(__dirname, './books.json'));
     res.writeHead(200, { "Content-Type": "application/json" });
 
     const bookView = JSON.parse(books.toString());
